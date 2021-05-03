@@ -1,16 +1,12 @@
+## Notes
+- to restart i3 press  `$mod+shift+r`
+- to run an application on login add `exec <command>` to `i3/config`
+- to run an application on i3 restart add `exec_always <command>` to `i3/config`
+
 ## Configuration
 
-```
-# i3lock
-bindsym $mod+shift+x exec i3lock
-
-
-```
-- to restart i3 press  `$mod+shift+r`
-
-- to run an application on login add `exec <command>` to `i3/config`
-
-- to run an application on i3 restart add `exec_always <command>` to `i3/config`
+- keybinding `i3lock`
+  - `bindsym $mod+shift+x exec i3lock`
 
 - to set wallpaper
   - install `feh` or `<forgot name>`
@@ -51,18 +47,19 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
   - make sure locale is set to something with UTF-8
   - copy paste icons into workspace name
 
-
 ### some links
-- [yosemite san francisco font](https://github.com/supermarin/YosemiteSanFranciscoFont)
+- [Source Code Pro font](https://github.com/adobe-fonts/source-code-pro/)
+- [scripts for i3blocks](https://github.com/vivien/i3blocks-contrib)
 - [infinality article by webupd8](http://www.webupd8.org/2013/06/better-font-rendering-in-linux-with.html)
-- [i3wm docs](https://i3wm.org/docs/)
-- [dot files](https://github.com/bookercodes/dotfiles/tree/ubuntu)
+- [i3wm docs by](https://i3wm.org/docs/)
+- [dot files that youtuber](https://github.com/bookercodes/dotfiles/tree/ubuntu)
 - [arc firefox theme](https://github.com/horst3180/arc-firefox-theme)
 - [arc gtk theme](https://github.com/horst3180/Arc-theme)
 - [i3lock](https://www.reddit.com/r/unixporn/comments/3358vu/i3lock_unixpornworthy_lock_screen/)
 
 - configuring system fonts
-  - `font pango:System San Francisco Display 14`
+  - run the code below this list to install SourceCodePro font
+  - `font pango:SourceCodePro 11`
   - `sudo apt install lxappearance`
   - generate gtk config files by changing something in lxappearance
   - edit the two config files, one in home dir, one in .config
@@ -104,9 +101,13 @@ bar {
 # remove borders from windows
 hide_edge_borders both
 ```
-
-[scripts for i3blocks](https://github.com/vivien/i3blocks-contrib)
-
+- set up the bars
+  - [scripts for i3blocks](https://github.com/vivien/i3blocks-contrib)
+  - `$ sudo pacman -S i3blocks`
+  - `$ cp /etc/i3blocks.conf ~/i3blocks/`
+  - inside the `blocks{}` block of `i3/conf` change the `status_command` line to `status_command i3blocks -c /home/tihawk/i3blocks/i3blocks.conf`
+  - add all required scripts, and their representations inside the config file
+  
 - get terminator to be transparent
   - install `picom`
   - in `picom.conf` set `vsync` to `false` on virtual machines
