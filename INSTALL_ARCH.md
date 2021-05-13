@@ -121,12 +121,11 @@ Add `VBoxClient-all` to `.xinitrc` just before `exec i3` line.
 [Source Code Pro font](https://github.com/adobe-fonts/source-code-pro/)
 put fonts in `~/.local/share/fonts`
 ```
-$ pacman -S firefox feh lxappearance i3blocks picom openssh
-$ pacman -S wget unzip openvpn sysstat
+$ pacman -S firefox feh lxappearance i3blocks picom openssh wget unzip openvpn python-pip unrar
 ```
 
 ### ArchStrike
-[ArchStrike: An Arch Linux repository for security professionals and enthusiasts](https://archstrike.org/)
+[ArchStrike: An Arch Linux repository for security professionals and enthusiasts](https://archstri3ke.org/)
 
 
 Add the following to the bottom of your /etc/pacman.conf:
@@ -180,6 +179,12 @@ $ pacman -Sgg | grep archstrike-<groupname>
 
 ```
 # pacman -S code
+```
+
+### The fun stuff
+
+```
+# pacman -S john
 ```
 
 ## TODO
