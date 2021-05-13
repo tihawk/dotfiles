@@ -121,11 +121,66 @@ Add `VBoxClient-all` to `.xinitrc` just before `exec i3` line.
 [Source Code Pro font](https://github.com/adobe-fonts/source-code-pro/)
 put fonts in `~/.local/share/fonts`
 ```
-$ pacman -S firefox feh lxappearance i3blocks picom
+$ pacman -S firefox feh lxappearance i3blocks picom openssh
 $ pacman -S wget unzip openvpn sysstat
 ```
 
+### ArchStrike
 [ArchStrike: An Arch Linux repository for security professionals and enthusiasts](https://archstrike.org/)
+
+
+Add the following to the bottom of your /etc/pacman.conf:
+```
+[archstrike]
+Server = https://mirror.archstrike.org/$arch/$repo
+```
+
+```
+# pacman -Syy
+
+# pacman-key --init
+# dirmngr < /dev/null
+# pacman-key -r 9D5F1C051D146843CDA4858BDE64825E7CBC0D51
+# pacman-key --lsign-key 9D5F1C051D146843CDA4858BDE64825E7CBC0D51
+
+# pacman -S archstrike-keyring
+# pacman -S archstrike-mirrorlist
+```
+Open /etc/pacman.conf and replace the following block you added above:
+```
+[archstrike]
+Server = https://mirror.archstrike.org/$arch/$repo
+```
+with a new block that uses the mirrorlist instead:
+```
+[archstrike]
+Include = /etc/pacman.d/archstrike-mirrorlist
+```
+```
+# pacman -Syy
+```
+
+The list of ArchStrike packages can be viewed by running:
+
+```
+$ pacman -Sl archstrike
+```
+The list of ArchStrike groups available can be viewed by running:
+
+```
+$ pacman -Sg | grep archstrike
+```
+The list of packages in a specific group can be viewed by running:
+
+```
+$ pacman -Sgg | grep archstrike-<groupname>
+```
+
+### VSCode
+
+```
+# pacman -S code
+```
 
 ## TODO
 

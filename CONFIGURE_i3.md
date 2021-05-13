@@ -107,7 +107,13 @@ hide_edge_borders both
   - `$ cp /etc/i3blocks.conf ~/i3blocks/`
   - inside the `blocks{}` block of `i3/conf` change the `status_command` line to `status_command i3blocks -c /home/tihawk/i3blocks/i3blocks.conf`
   - add all required scripts, and their representations inside the config file
-  
+
+```
+# more icons! download from https://icofont.com/icons
+unzip ~/Downloads/icofont.zip
+cp ~/Downloads/icofont/fonts/*.ttf ~/.local/share/fonts/
+```
+
 - get terminator to be transparent
   - install `picom`
   - in `picom.conf` set `vsync` to `false` on virtual machines
