@@ -1,0 +1,1 @@
+getent passwd $USER | cut -d":" -f5 | cut -d"," -f1 | { read name; if [ ! -z $name ]; then echo "Здравей, $name!"; else echo "Здравей, $USER!"; fi }
