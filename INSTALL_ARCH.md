@@ -185,4 +185,5 @@ $ pacman -Sgg | grep archstrike-<groupname>
 ## TODO
 
 - [ ] Add undetected resolutions to Virtual1 [potential solution](https://wiki.archlinux.org/title/Xrandr#Permanently_adding_undetected_resolutions)
-- [ ] Install VSCode or Sublime Text
+- [X] Install VSCode or Sublime Text
+- [ ] Configure VSCode
