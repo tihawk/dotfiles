@@ -183,8 +183,15 @@ $ pacman -Sgg | grep archstrike-<groupname>
 
 ### The fun stuff
 
+In `/opt/`
+```bash
+sudo wget 'https://github.com/danielmiessler/SecLists/raw/master/Passwords/Leaked-Databases/rockyou.txt.tar.gz`
+tar -xvzf rockyou.txt.tar.gz
+sudo wget 'https://github.com/daviddias/node-dirbuster/raw/master/lists/directory-list-2.3-medium.txt'
 ```
-# pacman -S john
+
+```
+# pacman -S john nmap gobuster burpsuite netcat
 ```
 
 ## TODO
