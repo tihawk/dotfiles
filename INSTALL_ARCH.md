@@ -189,11 +189,16 @@ sudo wget 'https://github.com/danielmiessler/SecLists/raw/master/Passwords/Leake
 tar -xvzf rockyou.txt.tar.gz
 sudo wget 'https://github.com/daviddias/node-dirbuster/raw/master/lists/directory-list-2.3-medium.txt'
 sudo wget 'https://raw.githubusercontent.com/pentestmonkey/php-reverse-shell/master/php-reverse-shell.php'
+sudo wget 'https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh'
+sudo wget 'https://exiftool.org/Image-ExifTool-12.25.tar.gz'
+tar -xzvf Image-ExifTool-12.25.tar.gz
 ```
 
 ```
-# pacman -S john nmap gobuster burpsuite netcat
+# pacman -S bc john nmap gobuster burpsuite netcat radare2 ghidra samba enum4linux hydra eog
 ```
+
+> For samba, create a config file at `/etc/samba/smb.conf` with the example config from [here](https://git.samba.org/samba.git/?p=samba.git;a=blob_plain;f=examples/smb.conf.default;hb=HEAD)
 
 ## TODO
 
