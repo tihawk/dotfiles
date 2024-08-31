@@ -24,21 +24,35 @@ lsp_zero.extend_lspconfig({
   capabilities = require('cmp_nvim_lsp').default_capabilities(),
 })
 
--- These are just examples. Replace them with the language
--- servers you have installed in your system
-require('lspconfig').gleam.setup({})
-require('lspconfig').rust_analyzer.setup({})
-require('lspconfig').tsserver.setup({})
-require('lspconfig').eslint.setup({})
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  -- Replace the language servers listed here 
+  -- with the ones you want to install
+  ensure_installed = {
+    'lua_ls',
+    'clangd',
+    'rust_analyzer',
+    'tsserver',
+    'eslint',
+    'rome'
+  },
+  handlers = {
+    function(server_name)
+      require('lspconfig')[server_name].setup({})
+    end,
+  },
+})
 
 ---
 -- Autocompletion setup
 ---
 local cmp = require('cmp')
+local cmp_format = require('lsp-zero').cmp_format({details = true})
 
 cmp.setup({
   sources = {
     {name = 'nvim_lsp'},
+    {name = 'buffer'},
   },
   snippet = {
     expand = function(args)
