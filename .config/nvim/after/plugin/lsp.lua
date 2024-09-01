@@ -29,8 +29,9 @@ require('mason-lspconfig').setup({
   -- Replace the language servers listed here 
   -- with the ones you want to install
   ensure_installed = {
+    'harper_ls',
     'lua_ls',
-    'clangd',
+    --'clangd',
     'rust_analyzer',
     'tsserver',
     'eslint',
