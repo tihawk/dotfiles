@@ -1,5 +1,10 @@
 [global_config]
 [keybindings]
+  go_up = <Alt>k
+  go_down = <Alt>j
+  go_left = <Alt>h
+  go_right = <Alt>l
+  layout_launcher = <Primary><Alt>l
 [profiles]
   [[default]]
     background_darkness = 0.13
