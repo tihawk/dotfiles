@@ -108,7 +108,7 @@ bindsym $mod+a focus parent
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:"
 set $ws2 "2:"
-set $ws3 "3:"
+set $ws3 "3:"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
@@ -207,13 +207,15 @@ hide_edge_borders both
 
 # key bindings
 bindsym $mod+shift+f exec firefox
+bindsym $mod+shift+g exec google-chrome
 
 exec --no-startup-id xrandr --output Virtual1 --mode 1680x1050
 exec i3-sensible-terminal
-exec firefox
+exec google-chrome
+exec xfce4-clipman
 exec_always feh --bg-scale /home/$(whoami)/.wallpapers/"Konachan.com - 347721 bed cyberpunk_2077 cyberpunk__edgerunners david_martinez drink echosdoodle lucy_(cyberpunk) scenic sky space stars.jpg"
 exec_always picom --config /home/$(whoami)/.config/i3/picom.conf
 
-assign [class="Terminator"] $ws1
+assign [class="x-terminal-emulator"] $ws1
 assign [class="code-oss"] $ws2
-assign [class="firefox"] $ws3
+assign [class="Google-chrome"] $ws3
