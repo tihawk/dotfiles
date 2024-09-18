@@ -33,7 +33,7 @@ require('mason-lspconfig').setup({
     'lua_ls',
     --'clangd',
     'rust_analyzer',
-    'tsserver',
+    'ts_ls',
     'eslint',
     'rome'
   },
