@@ -19,7 +19,7 @@ require("obsidian").setup({
   ---@return string|obsidian.Path The full path to the new note.
   note_path_func = function(spec)
     -- This is equivalent to the default behavior.
-    local path = spec.dir / tostring(os.date("%Y-%m-%d") .. '-' .. (spec.title and spec.title or spec.id))
+    local path = spec.dir / tostring((spec.title and spec.title or spec.id))
     return path:with_suffix(".md")
   end,
 
