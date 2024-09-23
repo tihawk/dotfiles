@@ -8,6 +8,7 @@ packages=(
   "i3blocks"
   "terminator"
   "nvim"
+  "fonts"
 )
 
 # Check if the first argument is "remove" to use the -D flag
