@@ -39,4 +39,13 @@ return require('packer').startup(function(use)
   use ({'williamboman/mason-lspconfig.nvim'})
   use ({'m4xshen/autoclose.nvim'})
 
+  use({
+    "epwalsh/obsidian.nvim",
+    tag = "*",  -- recommended, use latest release instead of latest commit
+    requires = {
+      -- Required.
+      "nvim-lua/plenary.nvim",
+    }
+  })
+
 end)
