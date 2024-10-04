@@ -215,7 +215,7 @@ exec i3-sensible-terminal
 exec google-chrome
 exec obsidian.AppImage
 exec xfce4-clipman
-exec_always feh --bg-scale /home/$(whoami)/.wallpapers/"Konachan.com - 347721 bed cyberpunk_2077 cyberpunk__edgerunners david_martinez drink echosdoodle lucy_(cyberpunk) scenic sky space stars.jpg"
+exec_always /home/kblagoev/.fehbg
 exec_always picom --config /home/$(whoami)/.config/i3/picom.conf
 
 assign [class="x-terminal-emulator"] $ws1
