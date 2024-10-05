@@ -92,7 +92,22 @@ require("obsidian").setup({
   --  * "prepend_note_path", e.g. '[[foo-bar.md|Foo Bar]]'
   --  * "use_path_only", e.g. '[[foo-bar.md]]'
   -- Or you can set it to a function that takes a table of options and returns a string, like this:
-  wiki_link_func = "use_alias_only",
+  ---@param opts { path: string, label: string, id: string|integer|?, anchor: obsidian.note.HeaderAnchor|?, block: obsidian.note.Block|? }
+  ---@return string
+  wiki_link_func = function(opts)
+    local header_or_block = ""
+    if opts.anchor then
+      header_or_block = string.format("#%s", opts.anchor.header)
+    elseif opts.block then
+      header_or_block = string.format("#%s", opts.block.id)
+    end
+    local name = opts.path:match("[^/]+$"):gsub("%.md", "")
+    if opts.label ~= name then
+      return string.format("[[%s%s|%s]]", name, header_or_block, opts.label)
+    else
+      return string.format("[[%s%s]]", name, header_or_block)
+    end
+  end,
 
   -- Optional, alternatively you can customize the frontmatter data.
   ---@return table
