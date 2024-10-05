@@ -14,6 +14,24 @@ require("obsidian").setup({
     folder = "templates"
   },
 
+  -- Optional, customize how note IDs are generated given an optional title.
+  ---@param title string|?
+  ---@return string
+  note_id_func = function(title)
+    -- Create a new ID by just using the title, but replacing space with "-".
+    local noteId = ""
+    if title ~= nil then
+      -- If title is given, transform it into valid file name.
+      noteId = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+    else
+      -- If title is nil, just generate 4 random lowercase letters plus the date.
+      for _ = 1, 4 do
+        noteId = tostring(os.time()) .. "-" .. string.char(math.random(97, 122))
+      end
+    end
+    return noteId
+  end,
+
   -- Optional, customize how note file names are generated given the ID, target directory, and title.
   ---@param spec { id: string, dir: obsidian.Path, title: string|? }
   ---@return string|obsidian.Path The full path to the new note.
@@ -26,9 +44,9 @@ require("obsidian").setup({
   -- Optional, configure additional syntax highlighting / extmarks.
   -- This requires you have `conceallevel` set to 1 or 2. See `:help conceallevel` for more details.
   ui = {
-    enable = true,  -- set to false to disable all additional syntax features
+    enable = true,          -- set to false to disable all additional syntax features
     update_debounce = 200,  -- update delay after a text change (in milliseconds)
-    max_file_length = 5000,  -- disable UI features for files with more than this many lines
+    max_file_length = 5000, -- disable UI features for files with more than this many lines
     -- Define how various check-boxes are displayed
     checkboxes = {
       -- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
@@ -67,4 +85,43 @@ require("obsidian").setup({
       ObsidianHighlightText = { bg = "#75662e" },
     },
   },
+
+  -- Optional, customize how wiki links are formatted. You can set this to one of:
+  --  * "use_alias_only", e.g. '[[Foo Bar]]'
+  --  * "prepend_note_id", e.g. '[[foo-bar|Foo Bar]]'
+  --  * "prepend_note_path", e.g. '[[foo-bar.md|Foo Bar]]'
+  --  * "use_path_only", e.g. '[[foo-bar.md]]'
+  -- Or you can set it to a function that takes a table of options and returns a string, like this:
+  wiki_link_func = "use_alias_only",
+
+  -- Optional, alternatively you can customize the frontmatter data.
+  ---@return table
+  note_frontmatter_func = function(note)
+    -- Add the title of the note as an alias.
+    if note.title then
+      note:add_alias(note.title)
+    end
+
+    note:add_tag("resource")
+
+    local out = {
+      id = note.id,
+      aliases = note.aliases,
+      tags = note.tags,
+      area = {},
+      links = {},
+      hubs = {},
+      type = {},
+    }
+
+    -- `note.metadata` contains any manually added fields in the frontmatter.
+    -- So here we just make sure those fields are kept in the frontmatter.
+    if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+      for k, v in pairs(note.metadata) do
+        out[k] = v
+      end
+    end
+
+    return out
+  end,
 })
