@@ -117,8 +117,6 @@ require("obsidian").setup({
       note:add_alias(note.title)
     end
 
-    note:add_tag("resource")
-
     local out = {
       id = note.id,
       aliases = note.aliases,
