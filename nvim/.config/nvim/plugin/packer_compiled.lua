@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["auto-save.nvim"] = {
+    loaded = true,
+    path = "/home/kblagoev/.local/share/nvim/site/pack/packer/start/auto-save.nvim",
+    url = "https://github.com/pocco81/auto-save.nvim"
+  },
   ["autoclose.nvim"] = {
     loaded = true,
     path = "/home/kblagoev/.local/share/nvim/site/pack/packer/start/autoclose.nvim",

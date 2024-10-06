@@ -48,4 +48,6 @@ return require('packer').startup(function(use)
     }
   })
 
+  use({"pocco81/auto-save.nvim"})
+
 end)
