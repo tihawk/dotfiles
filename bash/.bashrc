@@ -101,8 +101,8 @@ alias oo='cd $HOME/code/knowledge-base'
 alias or='vim $HOME/code/knowledge-base/inbox/*.md'
 
 # Git
-alias gl='gitlazy.sh'
-alias glu='gitlazy.sh updated'
+alias gl='gitlazy'
+alias glu='gitlazy updated'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
