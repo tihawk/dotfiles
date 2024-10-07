@@ -9,6 +9,7 @@ packages=(
   "terminator"
   "nvim"
   "fonts"
+  "scripts"
 )
 
 # Check if the first argument is "remove" to use the -D flag
