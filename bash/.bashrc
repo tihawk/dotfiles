@@ -103,6 +103,7 @@ alias or='vim $HOME/code/knowledge-base/inbox/*.md'
 # Git
 alias gl='gitlazy'
 alias glu='gitlazy updated'
+alias rr=cd_repo_root
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -145,3 +146,19 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Set PATH variable extensions
 export PATH=$PATH:$HOME/bin
+export PATH=$PATH:$HOME/bin/scripts
+
+# Define some functions
+
+# Ensure the script is being run from the root of a Git repository
+cd_repo_root() {
+  GIT_ROOT=$(git rev-parse --show-toplevel)
+  if [ $? -ne 0 ]; then
+      echo "Error: Not inside a Git repository."
+      exit 1
+  fi
+  
+  # Change to the Git root directory
+  cd "$GIT_ROOT" || exit 1
+  echo "Navigating to Git root: $GIT_ROOT"
+}
