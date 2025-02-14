@@ -7,7 +7,8 @@ vim.keymap.set('n', '<C-p>', builtin.git_files, {})
 -- Ripgrep await for input to search for
 vim.keymap.set('n', '<leader>ps', function()
   -- This requires the ripgrep binary to be installed
-  builtin.grep_string({ search = vim.fn.input("Grep > ") });
+  -- builtin.grep_string({ search = vim.fn.input("Grep > ") }); moved to live grep
+  builtin.live_grep()
 end)
 
 -- Ripgrep for <cword> (word under cursor)
