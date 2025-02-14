@@ -1,0 +1,4 @@
+send 'vim .' C-m
+splitw -h -p 35
+splitw -v
+selectp -t 0

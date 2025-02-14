@@ -10,6 +10,7 @@ packages=(
   "nvim"
   "fonts"
   "scripts"
+  "tmux"
 )
 
 # Check if the first argument is "remove" to use the -D flag

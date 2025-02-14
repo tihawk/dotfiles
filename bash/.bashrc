@@ -95,6 +95,7 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias ts='tmux a -t'
 
 # Obsidian
 alias oo='cd $HOME/code/knowledge-base'
