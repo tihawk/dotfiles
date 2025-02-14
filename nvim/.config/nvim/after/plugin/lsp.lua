@@ -36,7 +36,8 @@ require('mason-lspconfig').setup({
     'ts_ls',
     'eslint',
     'rome',
-    'gopls'
+    'gopls',
+    'bashls',
   },
   handlers = {
     function(server_name)
