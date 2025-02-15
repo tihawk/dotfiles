@@ -142,6 +142,8 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/.go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH:$GOBIN
+export CARGOBIN=$HOME/.cargo/bin
+export PATH=$PATH:$CARGOBIN
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

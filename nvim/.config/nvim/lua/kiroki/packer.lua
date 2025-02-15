@@ -30,13 +30,13 @@ return require('packer').startup(function(use)
 
   use ({'tpope/vim-fugitive'})
 
+  use ({'williamboman/mason.nvim'})
+  use ({'williamboman/mason-lspconfig.nvim'})
   use ({'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'})
   use ({'neovim/nvim-lspconfig'})
   use ({'hrsh7th/nvim-cmp'})
   use ({'hrsh7th/cmp-nvim-lsp'})
   use ({'hrsh7th/cmp-buffer'})
-  use ({'williamboman/mason.nvim'})
-  use ({'williamboman/mason-lspconfig.nvim'})
   use ({'m4xshen/autoclose.nvim'})
 
   use({
@@ -49,5 +49,7 @@ return require('packer').startup(function(use)
   })
 
   use({"pocco81/auto-save.nvim"})
+
+  use({"tihawk/mdwa.nvim"})
 
 end)

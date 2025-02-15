@@ -120,6 +120,11 @@ _G.packer_plugins = {
     path = "/home/kblagoev/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
   },
+  ["mdwa.nvim"] = {
+    loaded = true,
+    path = "/home/kblagoev/.local/share/nvim/site/pack/packer/start/mdwa.nvim",
+    url = "https://github.com/tihawk/mdwa.nvim"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/kblagoev/.local/share/nvim/site/pack/packer/start/nvim-cmp",
