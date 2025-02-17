@@ -145,6 +145,11 @@ _G.packer_plugins = {
     path = "/home/kblagoev/.local/share/nvim/site/pack/packer/start/obsidian.nvim",
     url = "https://github.com/epwalsh/obsidian.nvim"
   },
+  ["oil.nvim"] = {
+    loaded = true,
+    path = "/home/kblagoev/.local/share/nvim/site/pack/packer/start/oil.nvim",
+    url = "https://github.com/stevearc/oil.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/kblagoev/.local/share/nvim/site/pack/packer/start/packer.nvim",

@@ -30,6 +30,8 @@ return require('packer').startup(function(use)
 
   use ({'tpope/vim-fugitive'})
 
+  use({"stevearc/oil.nvim"})
+
   use ({'williamboman/mason.nvim'})
   use ({'williamboman/mason-lspconfig.nvim'})
   use ({'VonHeikemen/lsp-zero.nvim', branch = 'v4.x'})
