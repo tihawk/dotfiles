@@ -169,3 +169,5 @@ cd_repo_root() {
   cd "$GIT_ROOT" || exit 1
   echo "Navigating to Git root: $GIT_ROOT"
 }
+
+. "$HOME/.local/bin/env"
