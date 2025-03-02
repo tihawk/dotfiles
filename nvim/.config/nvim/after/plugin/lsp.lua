@@ -31,12 +31,13 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     'harper_ls',
     'lua_ls',
-    --'clangd',
+    'clangd',
     'rust_analyzer',
     'ts_ls',
     'eslint',
     'rome',
     'gopls',
+    'golangci_lint_ls',
     'bashls',
   },
   handlers = {
