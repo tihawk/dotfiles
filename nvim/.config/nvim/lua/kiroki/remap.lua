@@ -8,3 +8,6 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 -- Find and replace macro for word under cursor
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
   { desc = "Find and replace <cword> under cursor" })
+
+vim.keymap.set("n", "<leader>r", "<CMD>let@+=expand('%')<CR>",
+  { desc = "Copy current buffer location to global register" })
